@@ -43,7 +43,15 @@ const Dashboard = () => {
       <TareaForm />
 
       <section className="content">
-       {console.log(tareas)}
+        {tareas.length > 0 ? (
+            <div className='tareas'>
+              {tareas.map((tarea)=>(
+                <TareaItem key={tarea._id} tarea={tarea} />
+              ))}
+            </div>
+        ):(
+          <h3>No hay tareas para mostrar</h3>
+        )}
       </section>
     </>
   )
